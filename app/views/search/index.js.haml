@@ -1,0 +1,14 @@
+:plain
+  var search = $('#location').val();
+  var geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { 'address': search}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      var html = "";
+      for (i=0; i < results.length; i++){
+        html = html + '<a href="javascript:codeAddress(&apos;' + results[i].formatted_address + '&apos;);">' + results[i].formatted_address + '</a><br>';
+      };
+      $('#locations').html(html);
+    } else {
+      alert("Geocode was not successful for the following reason: " + status);
+    }
+  });

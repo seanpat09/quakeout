@@ -1,0 +1,6 @@
+#map_canvas{:style => "width: 1000px; height:500px"} 
+%div
+  = form_tag :root, :remote => true do
+    = text_field_tag :location, @location
+    = submit_tag 'Search'
+#locations
