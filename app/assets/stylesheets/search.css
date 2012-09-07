@@ -1,0 +1,25 @@
+body{
+ font-family: Arial;
+}
+
+#intro{
+  text-align: center;
+}
+
+#content {
+  font-size: 16px;
+}
+
+#map_canvas{
+  float: left;
+}
+
+#search_field input{
+  float: right;
+  font-size: 30px;
+
+}
+
+#locations{
+  text-align: center;
+}

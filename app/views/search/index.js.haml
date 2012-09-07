@@ -5,9 +5,9 @@
     if (status == google.maps.GeocoderStatus.OK) {
       var html = "";
       for (i=0; i < results.length; i++){
-        html = html + '<a href="javascript:codeAddress(&apos;' + results[i].formatted_address + '&apos;);">' + results[i].formatted_address + '</a><br>';
+        html = html + '<a href="javascript:placeMarkers(&apos;' + results[i].formatted_address + '&apos;);">' + results[i].formatted_address + '</a><br>';
       };
-      $('#locations').html(html);
+      $('#locations .results').html(html);
     } else {
       alert("Geocode was not successful for the following reason: " + status);
     }
