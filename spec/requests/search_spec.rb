@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe "Search" do
 
-  it 'should return a list of locations based on a search' do
+  it 'should return a list of locations based on a search', :js => true do
     visit "/"
-    fill_in "Location", :with => "Decatur, Ga"
+    find("input[name='location']").set('Los Angeles')
     click_button "Search"
-    page.should have_content "City of Decatur"
+    page.should have_content "Los Angeles, CA, USA"
   end
 
 end

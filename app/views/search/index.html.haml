@@ -1,12 +1,21 @@
 #intro
   %h1 QuakeOut: The Earthquake Locator
   %p Type in a location and find earthquakes that have occurred in that area 
+%table
+  %tr
+    %td
+      #map_canvas{:style => 'width: 750px; height:400px'} 
+    %td
+      %table
+        %tr
+          %td
+            #search_field
+              = form_tag :root, :remote => true do
+                = text_field_tag :location, @location
+                = submit_tag 'Search Location'
+          %tr
+            %td
+              #locations
+                %h2 Matches
+                .results
 
-#map_canvas{:style => 'width: 1000px; height:500px'} 
-#search_field
-  = form_tag :root, :remote => true do
-    = submit_tag 'Search City'
-    = text_field_tag :location, @location
-#locations
-  %h2 Matches
-  .results

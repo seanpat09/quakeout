@@ -7,17 +7,14 @@ body{
 }
 
 #content {
-  font-size: 16px;
+  font-size: 14px;
 }
 
-#map_canvas{
-  float: left;
+td {
+  vertical-align: top;
 }
-
 #search_field input{
-  float: right;
   font-size: 30px;
-
 }
 
 #locations{
