@@ -38,14 +38,6 @@ $(function() {
     $('#list .list_results').html(html);
   });
 });
-function center(lat,lng) {
-  var newCenter = new google.maps.LatLng(lat,lng);
-  map.setCenter(newCenter);
-};
-
-function markMap(lat,lng){
-  alert('hello');
-};
 
 function makePopup(marker, details){
   return function () {
