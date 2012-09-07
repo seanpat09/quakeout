@@ -20,6 +20,12 @@
                 .results
 
 #list
-  %h1 The Top 10 Largest Earthquakes in the Last 12 Months
-  .list_results
+  %h2 The Top 10 Largest Earthquakes in the Last 12 Months
+  %ol
+    - @list.each do |earthquake|
+      %li
+        %p= "Magnitude: " + earthquake["magnitude"].to_s
+        %p= "Date and Time (YYYY-MM-DD): " + earthquake["datetime"]
+        %p= "Location (lat,lng):  " + earthquake["location"]
+        %p= "Depth: " + earthquake["depth"]
 

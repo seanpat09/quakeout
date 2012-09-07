@@ -12,33 +12,6 @@ $(function() {
   infowindow = new google.maps.InfoWindow();
 });
 
-$(function() {
-  var lastyear = new Date();
-  lastyear.setMonth(lastyear.getMonth() - 12);
-  var list_request = 'http://api.geonames.org/earthquakesJSON?minMagnitude=7&north=90&south=-90&east=180&west=-180&maxRows=500&username=quakeout'
-  $.getJSON(list_request, function(data) {
-    var earthquakes = data.earthquakes
-    var html = "<ol>";
-    var n = 0;
-    for(i=0; i < earthquakes.length; i++){
-      var date = new Date(earthquakes[i].datetime);
-      if ( date > lastyear){
-        html = html + '<li>' +
-            '<p><b>Magnitude:</b> ' + earthquakes[i].magnitude + '</p>' + 
-            '<p><b>Date and Time (YYYY-MM-DD): </b>' + earthquakes[i].datetime + '</p>' +
-            '<p><b>Location (lat,lng):</b> (' + earthquakes[i].lat + ',' + earthquakes[i].lng +')</p>' +
-            '<p><b>Depth:</b> ' + earthquakes[i].depth + '</p></li>';
-        n++;
-        if (n >= 10){
-          break
-        }
-      } 
-    };
-    html = html + '</ol>';
-    $('#list .list_results').html(html);
-  });
-});
-
 function makePopup(marker, details){
   return function () {
     infowindow.close();
